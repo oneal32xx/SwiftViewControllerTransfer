@@ -12,14 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func PresentView2(_ sender: Any) {
+        let controller = UIStoryboard.init(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "ViewController2") as! ViewController2
+        controller.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.present(controller, animated: true, completion: nil)
+    }
+    
 }
 
